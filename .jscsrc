@@ -1,0 +1,9 @@
+{
+  "preset" : "google",
+  "fileExtensions": [".js"],
+  "validateQuoteMarks" : {
+    "mark": "'",
+    "escape": true
+  },
+  "excludeFiles" : ["node_modules/**", "test/**", "coverage/**", "dist/**", "build/**", "sandbox.js", "sandbox/**"]
+}

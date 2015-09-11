@@ -1,0 +1,9 @@
+{
+  "preset" : "google",
+  "fileExtensions": [".js"],
+  "validateQuoteMarks" : {
+    "mark": "'",
+    "escape": true
+  },
+  "maximumLineLength" : 120
+}
