@@ -200,3 +200,21 @@ describe('validate', function() {
     });
   });
 });
+
+describe('name', function() {
+  function test(expected, varargs) {
+    var args = Array.prototype.slice.call(arguments, 1);
+    it(expected, function() {
+      assert.strictEqual(
+        ranges.name.apply(ranges, args),
+        expected
+      );
+    });
+  }
+
+  test('[0,10]', 0, 10);
+  test('[6,7]', 6, 7);
+  test('(-10,7]', -10, 7, true);
+  test('[-50,13)', -50, 13, false, true);
+  test('(-1,1)', -1, 1, true, true);
+});

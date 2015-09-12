@@ -4,7 +4,8 @@ module.exports = {
   limit: limitRange,
   validate: validateRange,
   test: testRange,
-  curry: curry
+  curry: curry,
+  name: name
 };
 
 function wrapRange(min, max, value) {
@@ -32,6 +33,10 @@ function testRange(min, max, value, minExclusive, maxExclusive) {
   );
 }
 
+function name(min, max, minExcl, maxExcl) {
+  return (minExcl ? '(' : '[') + min + ',' + max + (maxExcl ? ')' : ']');
+}
+
 function curry(min, max, minExclusive, maxExclusive) {
   return {
     wrap: wrapRange.bind(null, min, max),
@@ -41,6 +46,7 @@ function curry(min, max, minExclusive, maxExclusive) {
     },
     test: function(value) {
       return testRange(min, max, value, minExclusive, maxExclusive);
-    }
+    },
+    toString: name.bind(null, min, max, minExclusive, maxExclusive)
   };
 }
