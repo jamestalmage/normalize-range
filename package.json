@@ -1,6 +1,6 @@
 {
   "name": "normalize-range",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Utility for normalizing a numeric range, with a wrapping function useful for polar coordinates",
   "license": "MIT",
   "repository": "jamestalmage/normalize-range",
