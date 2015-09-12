@@ -1,7 +1,7 @@
 {
   "name": "normalize-range",
   "version": "0.1.0",
-  "description": "My dazzling module",
+  "description": "Utility for normalizing a numeric range, with a wrapping function useful for polar coordinates",
   "license": "MIT",
   "repository": "jamestalmage/normalize-range",
   "author": {
@@ -24,7 +24,12 @@
     "index.js"
   ],
   "keywords": [
-    ""
+    "range",
+    "normalize",
+    "utility",
+    "angle",
+    "degrees",
+    "polar"
   ],
   "dependencies": {},
   "devDependencies": {

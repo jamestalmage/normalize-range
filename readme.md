@@ -1,7 +1,6 @@
 # normalize-range 
 
-Utilities for enforcing a numeric values are within a range, 
-including a wrapping function (i.e. angles, where 400˚ is the same as 40˚)
+Utility for normalizing a numeric range, with a wrapping function useful for polar coordinates.
 
 [![Build Status](https://travis-ci.org/jamestalmage/normalize-range.svg?branch=master)](https://travis-ci.org/jamestalmage/normalize-range)
 [![Coverage Status](https://coveralls.io/repos/jamestalmage/normalize-range/badge.svg?branch=master&service=github)](https://coveralls.io/github/jamestalmage/normalize-range?branch=master)
