@@ -217,4 +217,11 @@ describe('name', function() {
   test('(-10,7]', -10, 7, true);
   test('[-50,13)', -50, 13, false, true);
   test('(-1,1)', -1, 1, true, true);
+
+  it('toString() on curried objs', function() {
+    assert.strictEqual(
+      '' + ranges.curry(1, 3, true),
+      '(1,3]'
+    );
+  });
 });

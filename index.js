@@ -38,6 +38,7 @@ function name(min, max, minExcl, maxExcl) {
 }
 
 function curry(min, max, minExclusive, maxExclusive) {
+  var boundNameFn = name.bind(null, min, max, minExclusive, maxExclusive);
   return {
     wrap: wrapRange.bind(null, min, max),
     limit: limitRange.bind(null, min, max),
@@ -47,6 +48,7 @@ function curry(min, max, minExclusive, maxExclusive) {
     test: function(value) {
       return testRange(min, max, value, minExclusive, maxExclusive);
     },
-    toString: name.bind(null, min, max, minExclusive, maxExclusive)
+    toString: boundNameFn,
+    name: boundNameFn
   };
 }
