@@ -1,33 +1,14 @@
 'use strict';
 var assert = require('assert');
 var ranges = require('../');
+var namePi = require('stringify-pi');
+var almostEqual = require('almost-equal');
 
 var π = Math.PI;
 
-function close(a, b) {
-  return Math.abs(a - b) < 0.00000001;
-}
 
-function namePi(val) {
-  if (typeof val !== 'number') {
-    return val;
-  }
-  for (var numerator = 1; numerator <= 10; numerator++) {
-    for (var denom = 1; denom <= 10; denom++) {
-      if (close(Math.abs(val), (numerator * π / denom))) {
-        var s = val < 0 ? '-' : '';
-        if (numerator !== 1) {
-          s += numerator;
-        }
-        s += 'π';
-        if (denom !== 1) {
-          s += '/' + denom;
-        }
-        return s;
-      }
-    }
-  }
-  return '' + val;
+function close(a, b) {
+  return almostEqual(a, b, almostEqual.DBL_EPSILON, almostEqual.DBL_EPSILON);
 }
 
 function names(type, min, max, value, expected, minExcl, maxExcl) {
