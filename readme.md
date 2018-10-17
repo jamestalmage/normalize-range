@@ -62,6 +62,20 @@ nr.wrap(π) === -π;
 nr.wrap(4 * π / 3) === -2 * π / 3;
 ```
 
+### average(min, max, values)
+
+Returns average of circular quantities (`values`) in the range `[min, max)`.
+
+Averages of numbers on the opposite side of the circle are invalid and return undefined.
+
+```js
+nr.average(0, 360, [1, 359]) === 0; // Technically this is false as average will return a floating point number very close to, but not actually, 0
+nr.average(0, 360, [0, 180]) === undefined;
+nr.average(0, 360, [0, 180, 90]) === 90;
+nr.average(0, 360, [0, 180, -90]) === 270;
+nr.average(0, 360, [0, 360, 720]) === 0;
+```
+
 ### limit(min, max, value)
 
 Normalize the value by bringing it within the range.
