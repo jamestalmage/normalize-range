@@ -6,7 +6,6 @@ var almostEqual = require('almost-equal');
 
 var π = Math.PI;
 
-
 function close(a, b) {
   return almostEqual(a, b, almostEqual.DBL_EPSILON, almostEqual.DBL_EPSILON);
 }
